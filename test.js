@@ -1,29 +1,9 @@
 "use strict";
-let a = 3;
-let b = a++;
-let c = ++a;
-
-
-
-///////////////
-
-/*
-let x = 2;
-
-for(let i=0; i<4; i++){
-    x+=2;
-    
+function update(obj){
+    obj.color = 'red'
+    console.log(a)
 }
-*/
+let a = {color : 'blue'};
 
-////////////////////
-
-let x = 100;
-while( x >= 50 ){
-    x--
-    console.log(x)
-}
-x %= 7
-
-console.log(x)
-
+update(a);
+console.log(update);
