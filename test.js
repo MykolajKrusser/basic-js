@@ -1,13 +1,22 @@
 "use strict"
-var x = Math.pow(Math.floor(Math.PI), 3)
-console.log(x)
+var time = setTimeout(update, 2000);
+function update(){
+    //console.log(typeof time)
+    //console.log(time)
+}
+update();
+/////
 
-//////////
- var myNumber = [3, 6, 11, 5];
- myNumber.sort(function(a,b){
-     return b - a;
- })
- console.log(myNumber)
- //////////
+var x = 3;
+var one = {
+    x: 2,
+    two: {
+        x: 1,
+        three: function() {
+            return this.x
+        } 
+    }
+}
+var go = one.two.three;
 
- 
+console.log(one.two.three() + '' + go())
