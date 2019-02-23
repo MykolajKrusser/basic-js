@@ -1,42 +1,27 @@
 "use strict"
-var time = setTimeout(update, 2000);
-function update(){
-    //console.log(typeof time)
-    //console.log(time)
+var Employee = {
+    company: 'xyz'
 }
-update();
+var emp = Object.create(Employee);
+delete emp.company;
+console.log(emp)
+//////
+
+function Person(){
+    console.log(this)
+}
+
+var person = new Person();
+
 /////
 
-var x = 3;
-var one = {
-    x: 2,
-    two: {
-        x: 1,
-        three: function() {
-            //return this.x
-        } 
-    }
+
+function foo(){
+    this.baz = 'baz';
+    console.log(this.bar, baz)
 }
-var go = one.two.three;
+var bar = 'bar';
+new foo()
 
-//console.log(one.two.three() + '' + go())
-
-var arr = [2,5,2,4];
-var xy = 1;
-for(var i = 0; i < arr.length; i++){
-    if(arr[i]%2 === 0){
-        xy*=arr[i]
-        //console.log(xy)
-    }
-}
-//console.log(xy)
-
-var first = [2,5,2,4];
-var second = [...first, 6554];
-//var another = first;
-second.push(5);
-//another.push(1111)
-console.log(second)
-
-/////
+///
 
