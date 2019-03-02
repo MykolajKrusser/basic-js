@@ -1,49 +1,32 @@
-function evenize(a){
-  if(a % 2 == 0)
-  return a;
-  return a+1;
+/*
+let f;
+
+if(true){
+  let i = 1;
+  f = ()=>{
+    console.log(i)
+  }
+
 }
+console.dir(f);
+f();
+*/
 
-var a = evenize(13)
-document.write(a)
-
-
-//////////
-
-
-
-var arr = [1,3,4,2];
-var count = 0;
-for(var x = 0; x < arr.length; x++){
-  x = arr[x];
-  count++
-  console.log(x)
+let f = ()=>{
+  let i = 1;
+  let j = 2;
+  return ()=>{
+    console.log(i)
+    console.log(j)
+  }
 }
-console.log(count);
+console.dir(f())
 
-/////
-
-
-
-let mySet = new Set();
-mySet.add(8).add(7).add(1);
-for(let v of mySet.values()){
-  console.log(mySet.has(1) + v);
-  break
+for(var i = 0; i < 3; i++){
+  ((i)=>{
+      setTimeout (()=>{
+      console.log(i)
+    }, 1000)
+  })(i);
+  
 }
-
-
-//////
- var b = 10;
- var s = 20;
- console.log(b + s % 3)
-
-
- //////
-
- var first = function(a,b){
-   return a + b
- };
- var second = first.bind(null, 'learn');
- console.log(second('solo'))
-
