@@ -1,47 +1,33 @@
-let nums = [1, 2, 2, 3]; // [1,2,3]
-console.log([...new Set(nums)]);
-
-
-let f = ()=>{
+let arr = [
   {
-    (function () {
-      let l = 'let';
-      var v = 'var';
-    })();
-  };
-  //console.log(v);
-  //console.log(l)
-
-}
-f();
-
-console.log(5 < 6 < 7);
-console.log(7 > 6 > 5);
-
-let b  = function() { return arguments};
-console.log(b('hi'))
-
-let a  = (...n) => { return n};
-console.log(a('hi'))
-
-let x = function(){
-  return{
-    messege: 'hi'
+    num: 3,
+    str: 'apple'
+  },
+  {
+    num: 4,
+    str: 'cabbage'
+  },
+  {
+    num: 7,
+    str: 'banana'
   }
-}
-console.log(x())
+];
 
+arr.sort(function(val1, val2){
+  if(val1.num > val2.num){
+    return -1;
+  }else{
+    return 1;
+  };
+});
 
-let profile = {
-  name : 'qwer'
-}
-
-Object.defineProperty( profile, 'age', {
-  value: 3,
-  writable: false
+let arr2 = [...arr];
+arr2.sort(function(val1, val2){
+  if(val1.str < val2.str){
+    return -1;
+  }else{
+    return 1;
+  };
 })
-profile.name = 'asaaa';
-profile.age = 5;
-console.log(profile);
-
-console.log(Math.max())
+console.log(arr)
+console.log(arr2)
