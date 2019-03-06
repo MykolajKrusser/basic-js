@@ -1,42 +1,24 @@
-const x = [1,2,3];
-x[-1] = -1;
-x[-4] = 4;
-console.log(x[x.indexOf(10000)]);
-console.log(x)
-/////
+let arr = [1,2,3,4,5];
+let sum = 0;
+for(let i = 0; i < arr.length; i++){
+  sum += arr[i];
+}
 
-const ary = [1,2,3,15,30,5,45,7];
-console.log(ary.sort((a, b) => {
-  return a > b;
-}))
-
-/////
-
-let i = Number.MIN_VALUE;
-console.log(i)
-console.log(i * i) // 0
-console.log(i + 1) // +1;
-console.log(i - 1) // -1;
-console.log(i / i) // 1
-
-////
-
-let y = [1,2,3] + [4,5,6];
-let yy = [...[1,2,3], ...[4,5,6]]
-console.log(y)
-console.log(yy)
+let sum2 = arr.reduce((item, acc) => item + acc)
+console.log(sum + ' ' + sum2)
 
 
-/////
-console.log(555555555555555555);
-console.log(Number.MAX_SAFE_INTEGER);
-/////
+const ary = [0,2,1,6,4,5,7,8,10,9] // 1 number is missing
 
-(function(){
-  let a = b = 100;
-})()
-console.log(b);
-//console.log(a);
+function finder(ary){
+  let num = null;
+  const arr = ary.sort(function(a, b){return a - b})
+  for(let i = 0; i < arr.length; i++){
+    if ((arr[i+1] - arr[i]) > 1){
+      num = arr[i] + 1;
+    }
+  }
+  return num;
+}
 
-console.log(NaN === NaN)
-console.log(typeof NaN)
+console.log(finder(ary))
