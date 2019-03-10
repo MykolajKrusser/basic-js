@@ -1,15 +1,16 @@
-function findNextSquare(sq) {
-    let num = Math.sqrt(sq);
-    function isInteger(number) {
-        return (number ^ 0) === number;
-      }
-    if(isInteger(num)){
-        return Math.pow((num + 1), 2)
-    } else{
-        return -1;
-         // Return the next square if sq if a perfect square, -1 otherwise
+String.prototype.toJadenCase = function () {
+    strArray = this.split('');
+    if(strArray.length === 0){
+        return null
+    }else{
+        for(let i = 0; i < strArray.length; i++){
+            if(strArray[i] === ' '){
+                strArray[i + 1]= strArray[i + 1].toUpperCase();
+            }
+        }
+        strArray[0] = strArray[0].toUpperCase()
+        return strArray.join('');
     }
-  
-}
-
-console.log(findNextSquare(4));
+};
+var str = "How can mirrors be real if our eyes aren't real";
+console.log(str.toJadenCase())
