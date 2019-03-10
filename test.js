@@ -1,16 +1,15 @@
-const arr = [1,4,3,2];
-
-function maxMin (arr){
-  let result = []
-  let max;
-  let min;
-  let arrSum;
-  arr.sort((a,b)=> a - b);
-  arrSum = arr.reduce((a,b)=> a+b)
-  max = arrSum - arr[0];
-  min = arrSum - Math.max.apply(null, arr);
-  result[0]= min;
-  result[1]= max;
-  return result;
+function findNextSquare(sq) {
+    let num = Math.sqrt(sq);
+    function isInteger(number) {
+        return (number ^ 0) === number;
+      }
+    if(isInteger(num)){
+        return Math.pow((num + 1), 2)
+    } else{
+        return -1;
+         // Return the next square if sq if a perfect square, -1 otherwise
+    }
+  
 }
-console.log(maxMin(arr))
+
+console.log(findNextSquare(4));
